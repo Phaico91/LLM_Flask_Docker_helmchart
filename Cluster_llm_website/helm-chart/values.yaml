@@ -1,0 +1,29 @@
+replicaCount: 2
+
+image:
+  name: cluster-llm-website
+  tag: latest
+  context: "." # Der Pfad, wo das Dockerfile im Repository liegt
+  registry: docker.io # Beispiel: Docker Hub
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations: {}
+  host: chart-example.local
+  tls: []
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

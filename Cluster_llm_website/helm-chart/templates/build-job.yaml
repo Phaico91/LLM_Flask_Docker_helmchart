@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}-build
+  labels:
+    app: cluster-llm-website
+spec:
+  template:
+    spec:
+      containers:
+      - name: builder
+        image: docker:20.10
+        command: ["/bin/sh", "-c"]
+        args:
+          - >
+            docker build -t {{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }} {{ .Values.image.context }} &&
+            docker push {{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }};
+        volumeMounts:
+        - name: docker-socket
+          mountPath: /var/run/docker.sock
+      restartPolicy: Never
+      volumes:
+      - name: docker-socket
+        hostPath:
+          path: /var/run/docker.sock
