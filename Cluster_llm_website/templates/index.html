@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask LLM Chat</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Flask LLM Chat</h1>
+        </header>
+        <section class="model-section">
+            <form id="model-form">
+                <input type="text" name="model_name" placeholder="Enter Hugging Face Model Name" required>
+                <button type="submit">Download Model</button>
+            </form>
+            <select id="model-dropdown">
+                <option value="" disabled selected>Select a Model</option>
+                {% for model in models %}
+                <option value="{{ model }}">{{ model }}</option>
+                {% endfor %}
+            </select>
+        </section>
+        <main class="chat-window">
+            <div id="chat-output" class="messages"></div>
+        </main>
+        <footer>
+            <textarea id="chat-input" placeholder="Type your message..."></textarea>
+            <button id="send-btn">Send</button>
+        </footer>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

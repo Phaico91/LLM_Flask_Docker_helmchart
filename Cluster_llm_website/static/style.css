@@ -1,0 +1,113 @@
+/* Allgemeine Stile */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f7; /* Hellgrau */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    max-width: 800px;
+    min-height: 80%;
+    background-color: #ffffff; /* Weiß */
+    border: 2px solid #008080; /* Petrol */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    padding: 15px;
+    background-color: #008080; /* Petrol */
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.model-section {
+    padding: 15px;
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-window {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.messages div {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #e0f7fa; /* Hellpetrol */
+    align-self: flex-start;
+    max-width: 70%;
+}
+
+.messages div.response {
+    background-color: #b2ebf2; /* Heller Petrolton */
+    align-self: flex-end;
+}
+
+footer {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-top: 1px solid #cccccc;
+}
+
+textarea {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    resize: none;
+    height: 50px;
+}
+
+button {
+    background-color: #008080; /* Petrol */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005f5f; /* Dunkler Petrol */
+}
+
+.user-message {
+    background-color: #d1f7d1; /* Hellgrün für Benutzer */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.model-response {
+    background-color: #f0f0f0; /* Hellgrau für Modell */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
